@@ -1,0 +1,253 @@
+:root {
+  --ff: "Golos Text";
+  --text-color: #ebebeb;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body header h1 {
+  font-size: 2em;
+  font-family: var(--ff);
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.895);
+  width: 100%;
+}
+
+header nav {
+  width: 95%;
+  margin-left: 2.5%;
+  display: flex;
+  padding: 1.2%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav .menu {
+  width: 25%;
+}
+header nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1.2em;
+  font-family: var(--ff);
+  margin-left: 10%;
+}
+
+.vid {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+#myvid {
+  width: 100%;
+}
+
+main .title {
+  font-family: var(--ff);
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  font-size: 2em;
+  top: 75%;
+  left: 2%;
+}
+
+main .title p {
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 3%;
+}
+
+.title button {
+  padding: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+  border-radius: 40px;
+  border: none;
+  font-size: 20px;
+  margin-top: 5%;
+}
+
+.subtitle {
+  margin-top: 57%;
+  width: 100;
+}
+.subtitle h1 {
+  margin-left: 2.5%;
+  font-size: 2em;
+  font-family: var(--ff);
+}
+
+section #swiper {
+  width: 100%;
+}
+
+.clothes {
+  width: 33.33%;
+  float: left;
+  margin-top: 5%;
+}
+
+.clothes h1 {
+  font-size: 2em;
+  font-family: var(--ff);
+}
+
+.swiper {
+  width: 100%;
+  height: 500px;
+}
+
+.swiper-slide img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+footer {
+  position: absolute;
+  width: 100%;
+  background-color: black;
+  color: var(--text-color);
+  margin-top: 50%;
+}
+
+footer .footer {
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer h1 {
+  font-size: 2em;
+  font-family: var(--ff);
+  font-weight: 700;
+}
+
+.contact {
+  width: 40%;
+  padding: 2%;
+}
+
+.contact p {
+  font-family: var(--ff);
+  margin-top: 4%;
+  padding-bottom: 8%;
+  line-height: 20px;
+}
+
+.contact a {
+  padding: 3%;
+  padding-left: 8%;
+  padding-right: 8%;
+  background-color: var(--text-color);
+  border-radius: 30px;
+  color: black;
+  text-decoration: none;
+  font-family: var(--ff);
+  font-weight: 500;
+}
+
+.button--animation:hover {
+  background-color: rgb(98, 0, 0);
+  color: white;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.button--animation2:hover {
+  color: rgb(192, 0, 0);
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.visit {
+  padding: 2%;
+  width: 40%;
+}
+
+.visit ul {
+  margin-top: 4%;
+  font-family: var(--ff);
+}
+
+.visit ul li {
+  margin-top: 1%;
+}
+
+footer .credits {
+  padding: 2%;
+  font-family: var(--ff);
+  color: #8d8d8d;
+}
+
+.loader-container {
+  position: absolute;
+  margin-top: -5%;
+  margin-left: 4.5%;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  margin: 0 5px;
+  animation: loader-animation 0.6s ease-in-out infinite;
+}
+
+@keyframes loader-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.clothes .button .button--shop {
+  position: absolute;
+  width: 14%;
+  font-size: 1.5em;
+  margin-top: -2%;
+  z-index: 9999;
+  padding: 1%;
+  background-color: black;
+  color: var(--text-color);
+  border-radius: 30px;
+  border: none;
+  margin-left: 9%;
+}
+
+.clothes .button .button--shop:hover {
+  font-size: 1.6em;
+  transition: 0.3s;
+  cursor: pointer;
+}
