@@ -276,6 +276,7 @@ footer .credits {
     object-fit: fill;
     opacity: 100%;
   }
+  /*
   .vid::before {
     position: absolute;
     top: 0;
@@ -285,7 +286,7 @@ footer .credits {
     content: "";
 
     background-color: rgba(0, 0, 0, 0.315);
-  }
+  } */
 
   #myvid {
     width: 100vw;
