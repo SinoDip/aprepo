@@ -1,29 +1,32 @@
-import "./styles/reset.css";
-import "./styles/style.css";
-
+import './styles/reset.css';
+import './styles/style.css';
+import '//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js';
 // core version + navigation, pagination modules:
-import Swiper, { Navigation, Pagination } from "swiper";
-// import Swiper and modules styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
-const swiper = new Swiper(".swiper", {
+// eslint-disable-next-line no-unused-vars
+import Swiper, { Navigation, Pagination } from 'swiper';
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+new Swiper('.swiper', {
   // Optional parameters
-  direction: "horizontal",
+  direction: 'horizontal',
   loop: true,
 
   // If we need pagination
   pagination: {
-    el: ".swiper-pagination",
+    el: '.swiper-pagination',
   },
 });
 
 const coordinates = [4.4177433, 51.2300305];
 
+// eslint-disable-next-line no-unused-vars
 async function success(position) {
   const apiKey =
-    "pk.eyJ1Ijoic2lub3NhbWF0ZWgiLCJhIjoiY2xhbDNweGs3MDFoejNyb2JkenRyNTFsYSJ9.-HKLfUnvGXGcziU54rqbUA";
+    'pk.eyJ1Ijoic2lub3NhbWF0ZWgiLCJhIjoiY2xhbDNweGs3MDFoejNyb2JkenRyNTFsYSJ9.-HKLfUnvGXGcziU54rqbUA';
   const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${coordinates}.json?access_token=${apiKey}`;
 
   try {
@@ -32,9 +35,10 @@ async function success(position) {
 
     console.log(json);
 
-    document.querySelector("#address").textContent =
+    document.querySelector('#address').textContent =
       json.features[0].place_name;
-    loader.style.display = "none"; // Hide loader
+    // eslint-disable-next-line no-undef
+    loader.style.display = 'none'; // Hide loader
   } catch (error) {
     console.log(error);
   }
@@ -43,17 +47,18 @@ async function success(position) {
 success();
 
 // create instance of kinet with custom settings
+// eslint-disable-next-line no-undef
 var kinet = new Kinet({
   acceleration: 0.06,
   friction: 0.2,
-  names: ["x", "y"],
+  names: ['x', 'y'],
 });
 
 // select circle element
-var circle = document.getElementById("circle");
+var circle = document.getElementById('circle');
 
 // set handler on kinet tick event
-kinet.on("tick", function (instances) {
+kinet.on('tick', function (instances) {
   circle.style.transform = `translate3d(${instances.x.current}px, ${
     instances.y.current
   }px, 0) rotateX(${instances.x.velocity / 2}deg) rotateY(${
@@ -62,16 +67,40 @@ kinet.on("tick", function (instances) {
 });
 
 // call kinet animate method on mousemove
-document.addEventListener("mousemove", function (event) {
-  kinet.animate("x", event.clientX - window.innerWidth / 2);
-  kinet.animate("y", event.clientY - window.innerHeight / 2);
+document.addEventListener('mousemove', function (event) {
+  kinet.animate('x', event.clientX - window.innerWidth / 2);
+  kinet.animate('y', event.clientY - window.innerHeight / 2);
 });
 
 // log
-kinet.on("start", function () {
-  console.log("start");
+kinet.on('start', function () {
+  console.log('start');
 });
 
-kinet.on("end", function () {
-  console.log("end");
+kinet.on('end', function () {
+  console.log('end');
 });
+
+// eslint-disable-next-line no-undef
+$(document).ready(function () {
+  // eslint-disable-next-line no-undef
+  $('#nav-icon3').click(function () {
+    // eslint-disable-next-line no-undef
+    $(this).toggleClass('open');
+  });
+});
+
+function toggleMobileNav() {
+  var mobileMenu = document.getElementById('mobile-menu');
+  mobileMenu.classList.toggle('open');
+}
+
+document.getElementById('nav-icon3').addEventListener('click', function () {
+  toggleMobileNav();
+});
+
+// eslint-disable-next-line no-unused-vars
+function closeMobileNav() {
+  var mobileMenu = document.getElementById('mobile-menu');
+  mobileMenu.classList.remove('open');
+}
